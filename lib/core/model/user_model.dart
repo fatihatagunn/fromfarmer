@@ -9,6 +9,7 @@ class UserModel {
   String firstName;
   String lastName;
   String dateOfBirth;
+  int gender;
 
   UserModel({
     required this.id,
@@ -19,6 +20,7 @@ class UserModel {
     required this.firstName,
     required this.lastName,
     required this.dateOfBirth,
+    required this.gender,
   });
 
   // UserModel copyWith({
@@ -30,6 +32,7 @@ class UserModel {
   //   String? firstName,
   //   String? lastName,
   //   String? dateOfBirth,
+  //   int gender,
   // }) {
   //   return UserModel(
   //     id: id ?? this.id,
@@ -53,6 +56,7 @@ class UserModel {
       'firstname': firstName,
       'lastname': lastName,
       'dateOfBirth': dateOfBirth,
+      'gender': gender,
     };
   }
 
@@ -66,6 +70,7 @@ class UserModel {
       firstName: map['firstname'],
       lastName: map['lastname'],
       dateOfBirth: map['dateOfBirth'],
+      gender: map['gender'],
     );
   }
 
@@ -78,7 +83,8 @@ class UserModel {
   String toString() {
     return 'UserModel(id: $id, isFarmer: $isFarmer, email: $email, '
         'phoneNumber: $phoneNumber, password: $password, firstName: '
-        '$firstName, lastName: $lastName, dateOfBirth: $dateOfBirth)';
+        '$firstName, lastName: $lastName, dateOfBirth: $dateOfBirth, '
+        'gender: $gender)';
   }
 
   // @override
@@ -93,7 +99,8 @@ class UserModel {
   //       other.password == password &&
   //       other.firstName == firstName &&
   //       other.lastName == lastName &&
-  //       other.dateOfBirth == dateOfBirth;
+  //       other.dateOfBirth == dateOfBirth &&
+  //       other.gender == gender;
   // }
 
   // @override
@@ -105,6 +112,7 @@ class UserModel {
   //       password.hashCode ^
   //       firstName.hashCode ^
   //       lastName.hashCode ^
-  //       dateOfBirth.hashCode;
+  //       dateOfBirth.hashCode ^
+  //       gender.hashCode;
   // }
 }

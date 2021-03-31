@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:fromfarmer/core/model/user_model.dart';
 
 class FarmerModel extends UserModel {
@@ -19,6 +18,7 @@ class FarmerModel extends UserModel {
     required String firstName,
     required String lastName,
     required String dateOfBirth,
+    required int gender,
     required this.city,
     required this.district,
     required this.townOrVillage,
@@ -26,14 +26,16 @@ class FarmerModel extends UserModel {
     required this.street,
     required this.buildingNumber,
   }) : super(
-            id: id,
-            isFarmer: isFarmer,
-            email: email,
-            phoneNumber: phoneNumber,
-            password: password,
-            firstName: firstName,
-            lastName: lastName,
-            dateOfBirth: dateOfBirth);
+          id: id,
+          isFarmer: isFarmer,
+          email: email,
+          phoneNumber: phoneNumber,
+          password: password,
+          firstName: firstName,
+          lastName: lastName,
+          dateOfBirth: dateOfBirth,
+          gender: gender,
+        );
 
   // FarmerModel copyWith({
   //   String? city,
@@ -63,6 +65,7 @@ class FarmerModel extends UserModel {
       'firstname': firstName,
       'lastname': lastName,
       'dateOfBirth': dateOfBirth,
+      'gender': gender,
       'city': city,
       'district': district,
       'townOrVillage': townOrVillage,
@@ -82,6 +85,7 @@ class FarmerModel extends UserModel {
       firstName: map['firstname'],
       lastName: map['lastname'],
       dateOfBirth: map['dateOfBirth'],
+      gender: map['gender'],
       city: map['city'],
       district: map['district'],
       townOrVillage: map['townOrVillage'],
@@ -100,10 +104,10 @@ class FarmerModel extends UserModel {
   String toString() {
     return 'FarmerModel(id: $id, isFarmer: $isFarmer, email: $email, '
         'phoneNumber: $phoneNumber, password: $password, firstName: '
-        '$firstName, lastName: $lastName, dateOfBirth: $dateOfBirth, city: '
-        '$city, district: $district, townOrVillage: $townOrVillage, '
-        'neigborhood: $neigborhood, street: $street, buildingNumber: '
-        '$buildingNumber)';
+        '$firstName, lastName: $lastName, dateOfBirth: $dateOfBirth, gender: '
+        '$gender, city: $city, district: $district, townOrVillage: '
+        '$townOrVillage, neigborhood: $neigborhood, street: $street, '
+        'buildingNumber: $buildingNumber)';
   }
 
   // @override
